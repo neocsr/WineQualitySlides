@@ -1,0 +1,62 @@
+---
+title       : Wine Quality
+subtitle    : Modeling wine preferences to match human taste
+author      : Christian Sousa
+job         :
+framework   : io2012          # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js    # {highlight.js, prettify, highlight}
+hitheme     : tomorrow_night  #
+widgets     : []              # {mathjax, quiz, bootstrap}
+mode        : selfcontained   # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+The wine quality datasets used for this presentation were taken from the UCI datasets.
+
+https://archive.ics.uci.edu/ml/datasets/Wine+Quality
+
+The companion article to the datasets proposed a data mining approach to predict the human wine taste preferences.
+
+http://www.sciencedirect.com/science/article/pii/S0167923609001377
+
+--- .class #id
+
+## Datasets description
+
+- Red wine (only 4 rows and 3 predictors are shown)
+
+```{r, echo = FALSE, eval = TRUE}
+wine <- read.csv('winequality-red.csv', header = TRUE, sep = ";")
+head(wine[c("volatile.acidity", "pH", "alcohol", "quality")], 4)
+```
+
+- White wine (only 4 rows and 3 predictors are shown)
+
+```{r, echo = FALSE, eval = TRUE}
+wine <- read.csv('winequality-white.csv', header = TRUE, sep = ";")
+head(wine[c("volatile.acidity", "pH", "alcohol", "quality")], 4)
+```
+
+
+--- .class #id
+
+## Red Wine
+
+```{r, echo = FALSE, eval = TRUE}
+wine <- read.csv('winequality-red.csv', header = TRUE, sep = ";")
+hist(wine$quality, col = "salmon", main = "Red Wine Quality", xlab = "Quality")
+```
+
+--- .class #id
+
+## White Wine
+
+```{r, echo = FALSE, eval = TRUE}
+wine <- read.csv('winequality-white.csv', header = TRUE, sep = ";")
+hist(wine$quality, col = "salmon", main = "White Wine Quality", xlab = "Quality")
+```
+
+
+
